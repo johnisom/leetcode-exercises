@@ -23,7 +23,19 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 
 ## DATA STRUCTURES
-
+Input: n, a positive integer
+Output: distinct ways to climb to top, a positive integer
 
 ## ALGORITHMS
+
+1. default parameters: cache={1: 1, 2: 2}, count=3
+2. If cache[n] then return cache[n].
+3. cache[count] = cache[count - 1] + cache[count - 2]
+4. recursively call with cache and count + 1
+
+
+
+
+
+
 
