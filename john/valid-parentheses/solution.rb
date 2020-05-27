@@ -12,6 +12,10 @@ class Stack
     @array.pop
   end
 
+  def peek
+    @array.last
+  end
+
   def length
     @array.length
   end
@@ -21,6 +25,21 @@ class Stack
   end
 end
 
+PAIRS = { '[' => ']', '(' => ')', '{' => '}' }.freeze
+
 def is_valid(s)
-  # TODO: this method
+  return true if s.empty?
+
+  stack = Stack.new
+  s.each_char do |paren|
+    if PAIRS[paren]
+      stack.push(paren)
+    elsif stack.empty? || PAIRS[stack.peek] != paren
+      return false
+    else
+      stack.pop
+    end
+  end
+
+  stack.empty?
 end
