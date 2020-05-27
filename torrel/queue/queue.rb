@@ -19,7 +19,7 @@ class Queue
 
   def enqueue(val)
     pointer.next = Node.new(val)
-    pointer = pointer.next
+    self.pointer = pointer.next
     @length = @length + 1
     pointer.data
   end
@@ -43,3 +43,14 @@ class Queue
   private
   attr_accessor :pointer
 end
+
+
+queue = Queue.new
+puts queue.empty?
+queue.enqueue('hi')
+puts queue.length
+queue.enqueue('you')
+puts queue.length
+puts queue.dequeue
+puts queue.length
+p queue
