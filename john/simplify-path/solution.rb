@@ -1,6 +1,5 @@
 class Stack
   def initialize
-    @length = 0
     @array = []
   end
 
