@@ -28,9 +28,12 @@ n = 2
 - Calculate all paths from star postion (m and n) to robot position
   + Cache as I go
 - Introduce pointers for m and n (row, col)
-- Initialize the cache with the values of 
-pointers at m and n
-- Decrement row
-  + if the current position is on a boundary, cache it as 1
-  + Else, check the cache for bottom and right positions
-  + Add adjacent positiions and cache them for the current position value
+- Declare previous column hash and current column hash
+  + Set value at current position to zero in 'current column' hash
+- pointers at m and n
+- Iterate from m down to 1
+  + Iterate for n down to 1
+    * if the current position is on a boundary, cache it as 1
+      - n == row || m == col
+    * Add adjacent positiions and cache them for the current position value
+- Return cache value
