@@ -1,31 +1,35 @@
-// // NOT WORKING
-// const minPathSum = (grid, row=0, col=0) => {
-//   let rightSum;
-//   let downSum;
-
-//   if (!grid[row + 1] && !grid[0][col + 1]) {
-//     return grid[row][col];
-//   }
-
-//   if (grid[row][col + 1]) {
-//     rightSum = minPathSum(grid, row, col + 1);
-//   } else {
-//     rightSum = 10000;
-//   }
-
-//   if (grid[row + 1] && grid[row + 1][col]) {
-//     downSum = minPathSum(grid, row + 1, col);
-//   } else {
-//     downSum = 10000;
-//   }
-
-//   return Math.min(rightSum, downSum);
-// };
-
-console.log(minPathSum([
-  [1,3,1],
-  [1,5,1],
-  [4,2,1]
-]));
+var minPathSum = function(grid) {
+  return mpsHelper(grid, 0, 0, {})
+};
 
 
+const mpsHelper = (grid, row, col, memo) => {
+  const currentValue = grid[row][col];
+
+  if (row === grid.length - 1 && col === grid[0].length - 1) {
+    if (!memo[[row, col]]) {
+      memo[[row, col]] = currentValue;
+    }
+
+    return memo[[row, col]];
+  } else if (row === grid.length - 1) {
+    if (!memo[[row, col]]) {
+      memo[[row, col]] = currentValue + mpsHelper(grid, row, col + 1, memo);
+    }
+
+    return memo[[row, col]];
+  } else if (col === grid[0].length - 1) {
+    if (!memo[[row, col]]) {
+      memo[[row, col]] = currentValue + mpsHelper(grid, row + 1, col, memo);
+    }
+
+    return memo[[row, col]];
+  }
+
+  const rightSum = mpsHelper(grid, row, col + 1, memo);
+  const downSum = mpsHelper(grid, row + 1, col, memo);
+
+  memo[[row, col]] = currentValue + Math.min(rightSum, downSum);
+
+  return memo[[row, col]];
+};
