@@ -1,5 +1,13 @@
 # stack.rb
 
+require 'pry'
+=begin
+dummy
+
+node1 <
+node
+=end
+
 class Node
   attr_accessor :next, :data
 
@@ -13,33 +21,40 @@ class Stack
 
   def initialize
     @dummy = Node.new
-    self.pointer = @dummy
     @length = 0
   end
 
-  def add(val)
-    pointer.next = Node.new(val)
-    pointer = pointer.next
-    @length = @length + 1
-    pointer.data
+  def push(val)
+    new_node = Node.new
+    new_node.data = val
+    new_node.next = @dummy.next
+    @dummy.next = new_node
+    @length += 1
+    new_node.data
   end
 
   def pop
-    raise 'Cannot dequeue empty queue' if self.empty?
+    raise 'Cannot pop from empty stack' if self.empty?
     return_node = @dummy.next
     @dummy.next = @dummy.next.next
-    @length = @length - 1
+    @length -= 1
     return_node.data
   end
 
   def peek
-    pointer.data
+    @dummy.next.data
   end
 
   def empty?
     @length == 0
   end
-
-  private
-  attr_accessor :pointer
 end
+
+stack = Stack.new
+stack.push('hi')
+puts stack.peek
+puts stack.length
+puts stack.pop
+puts stack.length
+puts stack.empty?
+p stack
