@@ -17,7 +17,7 @@ Rules:
 - . means current directory
 - Implicit: directories and filenames can have dots in them
 
-Get rid of ./ as much as we can (assuming it’s not part of a fille/directory
+Get rid of ./ as much as we can (assuming it’s not part of a file/directory
 name)
 
 ## Examples ##
