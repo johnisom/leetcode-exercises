@@ -1,5 +1,5 @@
-require_relative 'treenode'
-require_relative 'stack'
+require_relative '../../non-leetcode/treenode'
+require_relative '../../non-leetcode/stack'
 
 def dpf_stack(tree_node) # → Array of values
   current_node = tree_node
