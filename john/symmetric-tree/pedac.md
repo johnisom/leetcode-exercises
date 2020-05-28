@@ -28,6 +28,15 @@ This is not symmetric:
     3   3
 ```
 
+Neither is this
+```
+    1
+   / \
+  2   2
+ /   /
+2   2
+```
+
 ## Data Structures ##
 
 Left array and right array
@@ -38,9 +47,12 @@ Left array and right array
 
 ### Traversal ###
 
-1. If root is nil, return array
-2. Recurse on left node
+1. If root is nil or has no children, return array
+2. If root has no left child, push nil
+   Else recurse on left node
 3. Add current val to array
+4. If root has no right child, push nil
+   Else recurse on right
 4. Recurse on right node
 5. Return array
 
