@@ -1,16 +1,16 @@
-# pedac is in john's folder
+# pedac is in John's folder
 
 def is_symmetric(root)
   return true if root.nil?
-  left = traverse(root.left, [])
-  right = traverse(root.right, [])
+  left = add_and_traverse(root.left, [])
+  right = add_and_traverse(root.right, [])
   left == right.reverse
 end
 
-def traverse(node, ary)
+def add_and_traverse(node, ary)
   return ary unless node
-  traverse(node.left, ary)
+  add_and_traverse(node.left, ary)
   ary.push(node.val)
-  traverse(node.right, ary)
+  add_and_traverse(node.right, ary)
   ary
 end
