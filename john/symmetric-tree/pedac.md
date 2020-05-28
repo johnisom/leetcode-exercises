@@ -62,3 +62,14 @@ Left array and right array
 2. Set the left array to be traversal(left node, [])
 3. Set the right array to be traversal(right node, [])
 4. If the left array is the right array in reverse, its symmetric
+
+## Actual Solution ##
+
+Use helper is_mirror(left, right)
+
+### is_mirror ###
+
+1. Return true if both are nil
+2. Return false if one is nil
+3. Return false if both not equal
+4. Return recurse(left.left, right.right) && recurse(left.right, right.left)
