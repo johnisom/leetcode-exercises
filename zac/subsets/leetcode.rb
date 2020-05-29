@@ -1,18 +1,17 @@
 # @param {Integer[]} nums
 # @return {Integer[][]}
-def subsets(nums) # TODO: can be optimized!
+def subsets(nums)
   results = []
-  backtrack(nums, [], results)
+  backtrack(nums.sort, [], results, 0)
   results
 end
 
-def backtrack(nums, tmp, results)
-  return if tmp.uniq != tmp || results.include?(tmp.sort)
-  results << tmp.dup.sort
+def backtrack(nums, tmp, results, pointer)
+  results << tmp.dup
 
-  nums.each do |n|
-    tmp << n
-    backtrack(nums, tmp, results)
+  pointer.upto(nums.length - 1) do |i|
+    tmp << nums[i]
+    backtrack(nums, tmp, results, i + 1)
     tmp.pop
   end
 end
@@ -54,10 +53,11 @@ end
 #   end
 
 #   if <<success condition>>  # also can return if terminal condition (leaf node)
-#     results << temp.dup
+#     results << temp.dup.sort
 #   end
 
 #   list.each do |n|
+#     next if n is already in temp
 #     temp << n                        # take
 #     backtrack(list, temp, results)   # explore
 #     temp.pop                         # clean up
