@@ -5,10 +5,10 @@
 Eventually-consistent databases are said to provide BASE, where it stands for
 **B**asic **A**vailability, **S**oft state, **E**ventual consistency.
 
-Basic Availability: Reads and writes are always available without consistency.  
-Soft State: No hard state because it will be eventually consistent. We only have
+**Basic Availability**: Reads and writes are always available without consistency.  
+**Soft State**: No hard state because it will be eventually consistent. We only have
 a probability of knowing the actual state.  
-Eventual Consistency: After some amount of time, we eventually know the actual state
+**Eventual Consistency**: After some amount of time, we eventually know the actual state
 of the system, causing future reads to be consistent.
 
 The general idea is that to be able to always have data available in a distributed
