@@ -3,8 +3,15 @@
 *Note: read the CAP & ACID cheatsheets first.*
 
 Eventually-consistent databases are said to provide BASE, where it stands for
-**B**asic **A**vailability, **S**oft state, **E**ventual consistency. The
-general idea is that to be able to always have data available in a distributed
+**B**asic **A**vailability, **S**oft state, **E**ventual consistency.
+
+Basic Availability: Reads and writes are always available without consistency.  
+Soft State: No hard state because it will be eventually consistent. We only have
+a probability of knowing the actual state.  
+Eventual Consistency: After some amount of time, we eventually know the actual state
+of the system, causing future reads to be consistent.
+
+The general idea is that to be able to always have data available in a distributed
 database, data may be stale before eventually updating and becoming
 consistent. This is in contrast to ACID, which is a set of db transaction
 properties that requires that the whole of the transaction is completed at
