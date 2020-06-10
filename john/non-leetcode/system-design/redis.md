@@ -111,7 +111,7 @@ would.
     - Really flexible because of variety of supported data types
 - Queues/buffers
   - Message queues for background jobs
-    - Look at Workerholic
+    - <https://workerholic.github.io/>
 - Pub/sub
   - Publisher publishes message
     - Message has classes/categories/channels
