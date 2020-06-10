@@ -141,11 +141,6 @@ would.
   - Fast, real-time
 - Shared state between processes
 
-Other small use cases:
-- Tag clouds
-  - Natural Language Processing?
-- Circular log buffers
-
 ## Drawbacks/Shortcomings ##
 
 - No hard schema to enforce data integrity
@@ -156,3 +151,5 @@ Other small use cases:
 - Size of data store is limited to RAM
   - Almost forced to horizontally scale if used as persistent database
 - Single-threaded
+- No relationships between data
+- Can't store complex data, unlike document store
