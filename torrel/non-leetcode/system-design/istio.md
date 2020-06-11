@@ -28,6 +28,7 @@
   + Authentication and authorization
 
 ![Istio Architecture](https://istio.io/latest/docs/ops/deployment/architecture/arch.svg)
+(Photo thanks to istio.io)
 
 ### Envoy
 - Description:
