@@ -1,5 +1,63 @@
 # Key-Value (Redis) #
 
+## Short Interview Review ##
+
+Redis is a super-fast in-memory key-value store that offers disk persistence.
+
+Some features:
+- On-disk persistence
+- Outstanding performance
+- LRU eviction
+- Replication
+
+Supported data structures to be used as value:
+- String
+- Hash
+- List
+- Set
+- Bitmap
+- And more…
+
+### Data Model ###
+
+In-memory data structure key-value store that persists data on-disk.
+
+- Key: string
+- Value: any of the data structures
+
+### Persistence ###
+
+Persistence is offered thru saving a snapshot of the dataset to disk or logging all write operations.
+
+### Scaling & Replication ###
+
+Redis Cluster
+
+### Consistency and Availability as Permanent Data Store ###
+
+High availability, medium consistency
+
+### Use Cases ###
+
+- Cache
+- Key-value store
+- Whenever you need blazing-fast performance
+
+### Drawbacks/Shortcomings ###
+
+- No hard schema to enforce data integrity
+- Limited query/analytics potential compared to RDBMS
+  - Because data is schemaless and wide-ranging
+- Depending on how you configure persistence, the data may be ephemeral
+- Not as mature
+- Size of data store is limited to RAM
+  - Almost forced to horizontally scale if used as persistent database
+- Single-threaded
+- No relationships between data
+- Can't store complex data, unlike document store
+
+## Long Thorough Version ##
+
 Redis is an open-source (BSD License) in-memory key-value store supporting atomic operations.
 
 Various features:
@@ -24,7 +82,7 @@ Various features:
   - In-memory
   - Basically giant hash table that has bells and whistles
 
-## Supported Data Structures ##
+### Supported Data Structures ###
 
 - String
 - Hash
@@ -41,40 +99,40 @@ Various features:
   - Comes with special calculations like finding the distance between two
     cities
 
-## Data Model ##
+### Data Model ###
 
 In-memory data structure key-value store that persists data on-disk.
 
 - Key: string
 - Value: any of the above listed data structures
 
-### Persistence ###
+#### Persistence ####
 
-#### Snapshot (RDB) ####
+##### Snapshot (RDB) #####
 
 Saves snapshot of dataset at user-defined intervals in a RDB file. Whenever
 it’s time to perform a snapshot, a new process is forked from the parent
 process and creates the RDB file. By forking, it allows the main redis
 instance to keep accepting requests.
 
-#### Append Only File (AOF) ####
+##### Append Only File (AOF) #####
 
 AOF persistence logs every write operation to a single log file. Because the
 file is only appended to, the original dataset can be rebuilt by executing
 each write in the log file.
 
-## Scaling and Replication ##
+### Scaling and Replication ###
 
 Horizontal scaling is achieved by using Redis Cluster (fancy sharding):
 - Clusters are presumably really easy to set up because the data is schemaless
 - Data is automaticaly sharded between Redis nodes in the cluster
 - The cluster is still available during network partitions
 
-## Consistency vs. Availability ##
+### Consistency vs. Availability ###
 
 Depending on you use Redis, there are 3 different models for consistency and availability.
 
-### Single Instance with Persistence ###
+#### Single Instance with Persistence ####
 
 In the context of a single Redis instance, there are no other nodes to be
 consistent with. Instead, we will consider the data integrity on the single
@@ -86,19 +144,19 @@ If you use RDB, you get variable data integrity.
   crash, before it has a chance to be persisted to disk. It’s variable because
   the user defines the interval at which the snapshots are saved.
 
-### Redis Cluster with Persistence ###
+#### Redis Cluster with Persistence ####
 
 During network partitions, the cluster is still highly available. The
 consistency within a cluster is lower, however, due to asyncronous data
 replication. Redis Clusters use eventual consistency.
 
-### Multiple Cache Instances ###
+#### Multiple Cache Instances ####
 
 When using Redis purely for caching (no data persistence), Redis caches suffer
 from the same availability and consistency issues that any caching system
 would.
 
-## Use Cases ##
+### Use Cases ###
 
 - Cache
   - Session cache
@@ -141,7 +199,7 @@ would.
   - Fast, real-time
 - Shared state between processes
 
-## Drawbacks/Shortcomings ##
+### Drawbacks/Shortcomings ###
 
 - No hard schema to enforce data integrity
 - Limited query/analytics potential compared to RDBMS
