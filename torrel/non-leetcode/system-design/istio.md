@@ -27,9 +27,6 @@
   + Metrics and logs
   + Authentication and authorization
 
-![Istio Architecture](https://istio.io/latest/docs/ops/deployment/architecture/arch.svg)
-(Photo thanks to istio.io)
-
 ### Envoy
 - Description:
   + Proxy server for sidecars
