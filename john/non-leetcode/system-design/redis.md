@@ -1,5 +1,9 @@
 # Key-Value (Redis) #
 
+## 5 Second Review ##
+
+Redis is good for super fast caching.
+
 ## Short Interview Review ##
 
 Redis is a super-fast in-memory key-value store that offers disk persistence.
