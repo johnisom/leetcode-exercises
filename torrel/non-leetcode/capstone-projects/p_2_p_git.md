@@ -1,12 +1,12 @@
-# Framework For Setting up P 2 P Git Repos
+# P2P Automated File Sharing with Git using a centralized time series log
 
 ## Type of Project
 - Product
 
 ## Problem Space
-- Distributed Systems
+- Distributed Version Control
+  + Can use event streaming to get rid of centralized repo
   + Coordinating distributed repositories
-  + Event Streaming
 
 ## Naive Approach
 1. A log
@@ -25,3 +25,18 @@
 - Pessimistic locking
   + When a file is open in the system, a push is not possible until it's done editing
 - Automatic pushes
+
+## Basic Idea
+- There is no centralized code base.
+- When a user commits a change, this is considered to be an event.
+- This event is then logged.
+- When a maintainer is online, a notification is sent to them.
+- If the commiter is online, an automatic pull can be coordinated.
+- Once the commit is approved, an approval event is sent to the log.
+- Other automatic pulls can be coordinated.
+
+## Events
+- Commits
+- Approval
+- Logging on
+- Pulls
