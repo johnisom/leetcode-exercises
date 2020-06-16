@@ -6,7 +6,7 @@
 ## Problem Space
 - Distributed Version Control
   + With distributed version control the complete codebase and version history is stored on every developer's computer
-  + Git was meant to be a decentralized version control system
+  + Git is a decentralized version control system
     * Teams use Github which is centralized
     * Although using a centralized repo doesn't prevent Git from being decentralized, it's not a purely decentralized Git.
   + Using Git without a centralized repository requires overhead of communication to perform manual merges
