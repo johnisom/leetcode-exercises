@@ -1,4 +1,4 @@
-# P2P Automated File Sharing with Git using a centralized time series log
+# P2P Automated Version Control with Git using a centralized time series log
 
 ## Type of Project
 - Product / Framework
@@ -14,8 +14,8 @@
 ### Potential Solution
 - Automate file sharing
   + Limit communication overhead
-- Event streaming can get rid of a centralized repo
-  + An event stream is a central point of communication that members of a network reference
+- An event log can get rid of a centralized repo
+  + An event log is a central point of communication that members of a network reference
   + When an event occurs, members of the network can respond to it as necessary
   + Instead of storing code in a central location, we can simply store the event.
   + An event is a minimum amount of information necessary to convey that an something occurred.
@@ -45,3 +45,12 @@
 - Single points of failure
 - Coordinating multiple staged commits
 - Merge conflicts
+
+## Sources
+- DVCS: https://www.perforce.com/blog/vcs/what-dvcs-anyway#:~:text=What%20Is%20a%20Distributed%20Version,files%20are%20tracked%20between%20computers.
+- Git:
+  + https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows
+  + https://git-scm.com/about/staging-area
+- Distributed Git server: https://medium.com/palantir/stemma-distributed-git-server-70afbca0fc29
+- Event Streaming: https://www.youtube.com/watch?v=T3Qkl59okjo
+- 
