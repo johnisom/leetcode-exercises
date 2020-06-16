@@ -31,7 +31,6 @@ a file, it is merged and pushed to the "main" branch.
 ## Problems to Solve ##
 
 - Git servers on everyone’s machine
-  - Or a process that polls for changes every 5 seconds, from a centralized
-    repository
+  - Uses git:// server for read-only
 - Auto-push small incremental changes
   - Process listens for changes to files
