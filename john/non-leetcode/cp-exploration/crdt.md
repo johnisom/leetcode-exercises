@@ -1,3 +1,6 @@
+**TODO**: add example (like conclave pic):
+![](https://conclave-team.github.io/conclave-site/blogImgs/two.png)
+
 # Confict-free Replicated Data Type (CRDT) #
 
 A CRDT is a data structure that can be replicated across multiple distributed
