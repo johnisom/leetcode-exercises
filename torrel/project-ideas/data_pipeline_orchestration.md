@@ -13,9 +13,28 @@
   - Share
   - Transform
 
+## Data Pipeline
+
+- Set of data processing elements connected in series. The output of one element is the input of the next.
+
+## Orchestration
+
+- Managing the state of data at every point along a pipeline
+  - Specifically, the orchestrator stage in a pipeline is where tasks are scheduled and integrated between systems
+
 ## Example
 
-- Pulling records from separate real estate databases to form a single set of records
+- Pulling records from separate real estate sources to form a single set of records
+
+            County Data              Listing Service
+               /                          \
+          Quality Check               Quality Check
+                     \                 /
+                           Merge
+                             |
+                         Transform
+                             |
+                           Share
 
 ## Challenges
 
@@ -37,12 +56,18 @@
   - Loose productive time analyzing previuos failuresf
 - Scaling
   - Distributed processing significantly more challenging than monolithic
+- Usability / portability
+  - Often implemented in an imperative way by data engineers
+    - High barrier to entry to perform data analysis (must learn a programming language)
+  - A declarative approach is potentially more performant
 
 ## Sources
 
 - https://www.alooma.com/answers/what-is-the-difference-between-a-data-pipeline-and-an-etl-pipeline
 - https://www.alooma.com/blog/building-a-professional-grade-data-pipeline
 - https://blogs.informatica.com/2019/08/20/data-processing-pipeline-patterns/
+- https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Orchestration_Pipelines/OrchestrationPipelines_Title.html
+- https://insidebigdata.com/2020/03/12/why-data-pipelines-desperately-need-orchestration/
 
 ### Related Topics
 
