@@ -95,9 +95,9 @@ It works like this:
 
 Here’s a good illustration/animation of the protocol:
 
-![Animation of protocol
-use](https://upload.wikimedia.org/wikipedia/commons/3/3d/Torrentcomp_small.gif
-"Animation of protocol use")
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Torrentcomp_small.gif" alt="Animation of protocol use" title="Animation of protocol use">
+</p>
 
 ### Problems BT Solves ###
 
@@ -123,7 +123,18 @@ naïve p2p protocol introduce:
 
 While BT certainly fixes a lot of issues, it comes with a lot of its own:
 
-- Foo
+- If the swarm size is small enough, it may be impossible to download the file
+  (as nobody can serve it)
+- Each individual peer will be under greater load than if they were simply a
+  client to some server
+  - Though BT reduces load on servers by eliminating them
+- There is a negative stigma associated with BT
+- Each peer needs a specialized BitTorrent client, which is a downloaded app
+  - WebTorrent fixes this
+- Slower than client-server because multiple connections need to be kept open
+  and the peers have slow upload rates
+- Domain of use for BitTorrent is smaller than TCP/IP or HTTP
+  - Pretty much just for sharing large files P2P
 
 ### Terminology ###
 
@@ -153,6 +164,11 @@ time), their IP address is removed from the tracker server’s list.
   - Downloading and seeding your favorite Linux distribution is quite legal
   - Downloading or seeding copyrighted works that you and the other peers
     don’t own or don’t have a license to is illegal
+
+## Future Directions ##
+
+The algorithm discussed is the old version. The new version is purely
+decentralized without tracker servers. Each peer has a DHT.
 
 ## Sources  ##
 
