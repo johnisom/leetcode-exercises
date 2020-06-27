@@ -170,6 +170,14 @@ time), their IP address is removed from the tracker server’s list.
 The algorithm discussed is the old version. The new version is purely
 decentralized without tracker servers. Each peer has a DHT.
 
+## TODO ##
+
+Look at use cases and alternatives
+
+- IPFS
+  - Components it uses
+- DHT
+
 ## Sources  ##
 
 *Wikipedia*: <https://en.wikipedia.org/wiki/BitTorrent>  
