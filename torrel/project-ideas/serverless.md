@@ -77,3 +77,5 @@
 - Software Engineering Daily
   - Cloufare Serverless with Zack Bloom
   - https://softwareengineeringdaily.com/wp-content/uploads/2019/11/SED955-Cloudflare-Products.pdf
+- Hackernoon
+  - https://hackernoon.com/what-is-serverless-architecture-what-are-its-pros-and-cons-cc4b804022e9
