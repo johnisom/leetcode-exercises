@@ -1,13 +1,11 @@
-CRDTs
+Event streaming
+EDA
 FaaS
 Edge Service Workers
 Serverless
 Bursty data
 Edge Computing
-Event streaming
-EDA
 API Gateway
 Microservices
-Distributed Hash Table
+Search Engine
 Data Pipeline Orchestration
-WebSocket
